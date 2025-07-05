@@ -5,10 +5,16 @@
 
 [node name="Santa" type="CharacterBody2D" node_paths=PackedStringArray("reindeer_array")]
 script = ExtResource("1_3tuck")
-reindeer_array = [NodePath("Reindeer"), NodePath("Reindeer2")]
+reindeer_array = [NodePath("Reindeer"), NodePath("Reindeer2"), NodePath("Reindeer3"), NodePath("Reindeer4")]
 
 [node name="Reindeer" parent="." instance=ExtResource("2_45kio")]
 position = Vector2(763, 340)
 
 [node name="Reindeer2" parent="." instance=ExtResource("2_45kio")]
 position = Vector2(578, 343)
+
+[node name="Reindeer3" parent="." instance=ExtResource("2_45kio")]
+position = Vector2(391, 343)
+
+[node name="Reindeer4" parent="." instance=ExtResource("2_45kio")]
+position = Vector2(201, 342)
