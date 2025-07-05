@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmmylxhcg2pbi"]
+
+[ext_resource type="Script" uid="uid://cqv4dyc6xv3ii" path="res://characters/santa.gd" id="1_3tuck"]
+[ext_resource type="PackedScene" uid="uid://wdc7ckteejwu" path="res://characters/reindeer.tscn" id="2_45kio"]
+
+[node name="Santa" type="CharacterBody2D" node_paths=PackedStringArray("reindeer_array")]
+script = ExtResource("1_3tuck")
+reindeer_array = [NodePath("Reindeer"), NodePath("Reindeer2")]
+
+[node name="Reindeer" parent="." instance=ExtResource("2_45kio")]
+position = Vector2(763, 340)
+
+[node name="Reindeer2" parent="." instance=ExtResource("2_45kio")]
+position = Vector2(578, 343)
