@@ -23,12 +23,27 @@ func _physics_process(delta: float) -> void:
 	reindeer_array[0].global_position.y = lerp(reindeer_array[0].global_position.y, delayed_position, .3)
 	for i in range(1, len(reindeer_array)):
 		#reindeer_array[i].position.y = reindeer_array[i-1].position_history.pop_front()
-		reindeer_array[i].global_position.y = lerp(reindeer_array[i].global_position.y, reindeer_array[i-1].position_history.pop_front(), .3)
+		reindeer_array[i].global_position.y = lerp(
+			reindeer_array[i].global_position.y, 
+			reindeer_array[i-1].position_history.pop_front(), 
+			.3
+		)
+	
+	queue_redraw()
 	
 	
 	#reindeer_array[0].position.y = lerp(reindeer_array[0].position.y, mouseY, .2)
 	#for i in range(1, len(reindeer_array)):
 		#reindeer_array[i].position.y = lerp(reindeer_array[i].position.y, reindeer_array[i-1].position.y, .4)
+
+func _draw() -> void:
+	for i in range(1, len(reindeer_array)):
+		draw_line(
+				reindeer_array[i-1].position,
+				reindeer_array[i].position,
+				Color.BLACK,
+				5
+			)
 
 func add_mouse_y(p: float):
 	mouse_points.append(p)
