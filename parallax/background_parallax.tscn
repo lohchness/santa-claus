@@ -14,17 +14,19 @@ mouse_filter = 2
 color = Color(0.0862745, 0.0588235, 0.0352941, 1)
 
 [node name="NightSky" type="Parallax2D" parent="."]
-repeat_size = Vector2(1900, 0)
+repeat_size = Vector2(850, 0)
 autoscroll = Vector2(-10, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="NightSky"]
-position = Vector2(872, 462)
+position = Vector2(359, 204)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_7qhgf")
 
 [node name="TreesLong" type="Parallax2D" parent="."]
-repeat_size = Vector2(3800, 0)
+repeat_size = Vector2(1520, 0)
 autoscroll = Vector2(-1000, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="TreesLong"]
-position = Vector2(1849, 853)
+position = Vector2(467, 575)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_m1spk")
