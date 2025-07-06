@@ -34,3 +34,6 @@ func add_mouse_y(p: float):
 
 func pop_mouse_y():
 	return mouse_points.pop_front()
+
+func receive_damage():
+	reindeer_array.pop_front().queue_free()
