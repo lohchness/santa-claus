@@ -1,17 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://ctktq0kdmj57"]
 
+[ext_resource type="Texture2D" uid="uid://n5muleytl07e" path="res://parallax/moon_sky_2.png" id="1_7qhgf"]
 [ext_resource type="Texture2D" uid="uid://dcnqmwjms4khu" path="res://parallax/forest_long.png" id="1_m1spk"]
-[ext_resource type="Texture2D" uid="uid://bavr66hvl1ek8" path="res://parallax/moon_sky.png" id="2_7qhgf"]
 
 [node name="BackgroundParallax" type="Node2D"]
 
 [node name="NightBackground" type="ColorRect" parent="."]
-offset_left = -90.0
-offset_top = -111.0
-offset_right = 2010.0
-offset_bottom = 1144.0
+offset_left = -15.0
+offset_top = 357.0
+offset_right = 1171.0
+offset_bottom = 670.0
 mouse_filter = 2
-color = Color(0.0862745, 0.0588235, 0.0352941, 1)
+color = Color(0.0666667, 0.121569, 0.27451, 1)
 
 [node name="NightSky" type="Parallax2D" parent="."]
 repeat_size = Vector2(850, 0)
@@ -20,7 +20,7 @@ autoscroll = Vector2(-10, 0)
 [node name="Sprite2D" type="Sprite2D" parent="NightSky"]
 position = Vector2(359, 204)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_7qhgf")
+texture = ExtResource("1_7qhgf")
 
 [node name="TreesLong" type="Parallax2D" parent="."]
 repeat_size = Vector2(1520, 0)
