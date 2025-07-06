@@ -11,9 +11,16 @@ const FRAMES: int = 60
 
 func _ready() -> void:
 	mouse_points = []
+	
 
 func _physics_process(delta: float) -> void:
-	var mouseY = get_global_mouse_position().y
+	var dir = Input.get_vector("left", "right", "up", "down")
+	velocity = dir * 1000
+	velocity.y *= 1.5
+	move_and_slide()
+	
+	#var mouseY = get_global_mouse_position().y
+	var mouseY = global_position.y
 	mouse_points.append(mouseY)
 	
 	if len(mouse_points) < int(FRAMES*delay_ms):
@@ -21,7 +28,8 @@ func _physics_process(delta: float) -> void:
 	
 	var delayed_position = mouse_points.pop_front()
 	
-	reindeer_array[0].global_position.y = lerp(reindeer_array[0].global_position.y, delayed_position, .3)
+	reindeer_array[0].global_position.y = global_position.y
+	#reindeer_array[0].global_position.y = lerp(reindeer_array[0].global_position.y, delayed_position, .6)
 	for i in range(1, len(reindeer_array)):
 		reindeer_array[i].global_position.y = lerp(
 			reindeer_array[i].global_position.y, 
@@ -30,6 +38,7 @@ func _physics_process(delta: float) -> void:
 		)
 	
 	queue_redraw()
+
 
 
 func _draw() -> void:
