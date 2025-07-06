@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://wdc7ckteejwu" path="res://characters/reindeer.tscn" id="2_45kio"]
 
 [node name="Santa" type="CharacterBody2D" node_paths=PackedStringArray("reindeer_array")]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_3tuck")
 reindeer_array = [NodePath("Reindeer"), NodePath("Reindeer2"), NodePath("Reindeer3"), NodePath("Reindeer4")]
 
