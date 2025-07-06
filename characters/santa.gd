@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var reindeer_array: Array[CollisionShape2D] = []
+@onready var dead_reindeer: PackedScene = preload("res://characters/dead_reindeer.tscn")
 
 # VERY BAD IDEA! 
 var mouse_points: Array[float] = []
@@ -36,4 +37,11 @@ func pop_mouse_y():
 	return mouse_points.pop_front()
 
 func receive_damage():
-	reindeer_array.pop_front().queue_free()
+	var r = reindeer_array.pop_front()
+	
+	var d = dead_reindeer.instantiate()
+	d.scale = Vector2(.5, .5)
+	get_tree().root.add_child(d)
+	d.global_position = r.global_position
+	
+	r.queue_free()
