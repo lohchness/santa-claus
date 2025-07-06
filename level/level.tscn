@@ -1,7 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://dck6i7106325u"]
+[gd_scene load_steps=3 format=3 uid="uid://dck6i7106325u"]
 
 [ext_resource type="PackedScene" uid="uid://ctktq0kdmj57" path="res://parallax/background_parallax.tscn" id="1_7lnir"]
+[ext_resource type="PackedScene" uid="uid://dmmylxhcg2pbi" path="res://characters/santa.tscn" id="2_5gx2l"]
 
 [node name="Level" type="Node2D"]
 
 [node name="BackgroundParallax" parent="." instance=ExtResource("1_7lnir")]
+
+[node name="Santa" parent="." instance=ExtResource("2_5gx2l")]
+position = Vector2(201, 424)
+scale = Vector2(0.5, 0.5)
