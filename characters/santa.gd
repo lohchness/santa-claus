@@ -36,7 +36,7 @@ func _draw() -> void:
 		draw_line(
 				reindeer_array[i-1].position,
 				reindeer_array[i].position,
-				Color.BLACK,
+				Color.OLIVE_DRAB,
 				5
 			)
 
