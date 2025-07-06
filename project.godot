@@ -25,6 +25,7 @@ window/dpi/allow_hidpi=false
 2d_physics/layer_1="world"
 2d_physics/layer_2="santa"
 2d_physics/layer_3="rocket"
+2d_physics/layer_4="balloon"
 
 [rendering]
 
