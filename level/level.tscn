@@ -28,15 +28,27 @@ metadata/_edit_horizontal_guides_ = [646.0]
 position = Vector2(149, 341)
 scale = Vector2(0.5, 0.5)
 
+[node name="StartGracePeriod" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
 [node name="MissileTimer" type="Timer" parent="."]
+
+[node name="JetGracePeriod" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="JetTimer" type="Timer" parent="."]
+
+[node name="BalloonGracePeriod" type="Timer" parent="."]
+wait_time = 25.0
+one_shot = true
 autostart = true
 
 [node name="BalloonTimer" type="Timer" parent="."]
 wait_time = 3.0
-autostart = true
-
-[node name="JetTimer" type="Timer" parent="."]
-autostart = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_mask = 0
@@ -67,6 +79,7 @@ position = Vector2(603.5, 654)
 shape = SubResource("RectangleShape2D_44x8d")
 
 [node name="Label" type="Label" parent="."]
+z_index = 1
 offset_left = 137.0
 offset_top = 27.0
 offset_right = 1131.0
@@ -75,6 +88,9 @@ theme_override_fonts/font = ExtResource("4_vkbyq")
 theme_override_font_sizes/font_size = 30
 horizontal_alignment = 2
 
+[connection signal="timeout" from="StartGracePeriod" to="." method="_on_start_grace_period_timeout"]
 [connection signal="timeout" from="MissileTimer" to="." method="_on_missile_timer_timeout"]
-[connection signal="timeout" from="BalloonTimer" to="." method="_on_balloon_timer_timeout"]
+[connection signal="timeout" from="JetGracePeriod" to="." method="_on_jet_grace_period_timeout"]
 [connection signal="timeout" from="JetTimer" to="." method="_on_jet_timer_timeout"]
+[connection signal="timeout" from="BalloonGracePeriod" to="." method="_on_balloon_grace_period_timeout"]
+[connection signal="timeout" from="BalloonTimer" to="." method="_on_balloon_timer_timeout"]
