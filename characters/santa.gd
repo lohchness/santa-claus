@@ -9,6 +9,8 @@ var mouse_points: Array[float] = []
 var delay_ms: float = .08
 const FRAMES: int = 60
 
+signal dead
+
 func _ready() -> void:
 	mouse_points = []
 	
@@ -51,6 +53,9 @@ func _draw() -> void:
 			)
 
 func receive_damage():
+	if len(reindeer_array) <= 2:
+		dead.emit()
+	
 	var r = reindeer_array.pop_front()
 	
 	var d = dead_reindeer.instantiate()

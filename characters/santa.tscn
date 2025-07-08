@@ -1,21 +1,35 @@
-[gd_scene load_steps=3 format=3 uid="uid://dmmylxhcg2pbi"]
+[gd_scene load_steps=5 format=3 uid="uid://dmmylxhcg2pbi"]
 
 [ext_resource type="Script" uid="uid://cqv4dyc6xv3ii" path="res://characters/santa.gd" id="1_3tuck"]
 [ext_resource type="PackedScene" uid="uid://wdc7ckteejwu" path="res://characters/reindeer/reindeer.tscn" id="2_45kio"]
+[ext_resource type="Texture2D" uid="uid://cdsgnd1o6u5fm" path="res://characters/reindeer/santa.png" id="3_x8nt7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x8nt7"]
+size = Vector2(27, 12)
 
 [node name="Santa" type="CharacterBody2D" node_paths=PackedStringArray("reindeer_array")]
 collision_layer = 2
 script = ExtResource("1_3tuck")
-reindeer_array = [NodePath("Reindeer"), NodePath("Reindeer2"), NodePath("Reindeer3"), NodePath("Reindeer4")]
+reindeer_array = [NodePath("Reindeer"), NodePath("Reindeer2"), NodePath("Reindeer3"), NodePath("Reindeer4"), NodePath("CollisionShape2D")]
+metadata/_edit_horizontal_guides_ = [20.0]
 
 [node name="Reindeer" parent="." instance=ExtResource("2_45kio")]
-position = Vector2(763, 340)
+position = Vector2(548, -1)
 
 [node name="Reindeer2" parent="." instance=ExtResource("2_45kio")]
-position = Vector2(578, 343)
+position = Vector2(417, -1)
 
 [node name="Reindeer3" parent="." instance=ExtResource("2_45kio")]
-position = Vector2(391, 343)
+position = Vector2(286, -1)
 
 [node name="Reindeer4" parent="." instance=ExtResource("2_45kio")]
-position = Vector2(201, 342)
+position = Vector2(142, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(10.5, 12)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_x8nt7")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(-3.5, -6)
+texture = ExtResource("3_x8nt7")

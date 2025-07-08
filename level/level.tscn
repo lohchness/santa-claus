@@ -24,7 +24,7 @@ metadata/_edit_horizontal_guides_ = [646.0]
 [node name="BackgroundParallax" parent="." instance=ExtResource("1_7lnir")]
 
 [node name="Santa" parent="." instance=ExtResource("2_5gx2l")]
-position = Vector2(66, 118)
+position = Vector2(149, 341)
 scale = Vector2(0.5, 0.5)
 
 [node name="MissileTimer" type="Timer" parent="."]
