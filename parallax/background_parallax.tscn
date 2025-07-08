@@ -24,7 +24,7 @@ texture = ExtResource("1_7qhgf")
 
 [node name="TreesLong" type="Parallax2D" parent="."]
 repeat_size = Vector2(1520, 0)
-autoscroll = Vector2(-1000, 0)
+autoscroll = Vector2(-500, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="TreesLong"]
 position = Vector2(467, 575)
