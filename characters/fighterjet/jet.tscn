@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://djc8rurixur3a"]
+
+[ext_resource type="Texture2D" uid="uid://dse07lklh5t80" path="res://characters/fighterjet/jet.png" id="1_wh1mx"]
+[ext_resource type="Script" uid="uid://gvwmwqkhqoxq" path="res://characters/fighterjet/jet.gd" id="2_nm3yn"]
+
+[node name="Jet" type="Sprite2D"]
+z_index = 1
+scale = Vector2(4, 4)
+texture = ExtResource("1_wh1mx")
+script = ExtResource("2_nm3yn")
+
+[node name="PresentTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="PresentTimer" to="." method="_on_present_timer_timeout"]

@@ -19,7 +19,12 @@ scale = Vector2(0.5, 0.5)
 autostart = true
 
 [node name="BalloonTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="JetTimer" type="Timer" parent="."]
 autostart = true
 
 [connection signal="timeout" from="MissileTimer" to="." method="_on_missile_timer_timeout"]
 [connection signal="timeout" from="BalloonTimer" to="." method="_on_balloon_timer_timeout"]
+[connection signal="timeout" from="JetTimer" to="." method="_on_jet_timer_timeout"]
