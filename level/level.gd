@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 
 func end_game():
 	Globals.score = score
-	get_tree().change_scene_to_file("res://ui/menu/end.tscn")
+	get_tree().change_scene_to_file.call_deferred("res://ui/menu/end.tscn")
 
 func _on_missile_timer_timeout() -> void:
 	var m = missile.instantiate()
