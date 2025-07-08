@@ -4,9 +4,23 @@ extends Node2D
 @onready var balloon: PackedScene = preload("res://obstacles/balloon/balloon.tscn")
 @onready var jet: PackedScene = preload("res://characters/fighterjet/jet.tscn")
 
-func _physics_process(delta: float) -> void:
-	pass
+@onready var santa = $Santa
+@onready var label = $Label
 
+var t = 0
+var score = 0
+
+func _physics_process(delta: float) -> void:
+	t += delta
+	score = int(t * 10)
+	
+	label.text = str(score)
+	
+	santa.connect("dead", Callable(self,"end_game"))
+
+func end_game():
+	Globals.score = score
+	get_tree().change_scene_to_file("res://ui/menu/end.tscn")
 
 func _on_missile_timer_timeout() -> void:
 	var m = missile.instantiate()

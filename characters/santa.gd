@@ -55,6 +55,7 @@ func _draw() -> void:
 func receive_damage():
 	if len(reindeer_array) <= 2:
 		dead.emit()
+		return
 	
 	var r = reindeer_array.pop_front()
 	

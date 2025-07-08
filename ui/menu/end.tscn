@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtypwedy52r48"]
+
+[ext_resource type="Script" uid="uid://bqu4vxe2rxjoa" path="res://ui/menu/end.gd" id="1_hbo8f"]
+[ext_resource type="Texture2D" uid="uid://d0aotv8ddfokw" path="res://ui/menu/end.png" id="1_w10iq"]
+[ext_resource type="FontFile" uid="uid://bnnnb2i2x0h7f" path="res://ui/menu/Jersey10-Regular.ttf" id="3_d8udd"]
+
+[node name="End" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hbo8f")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_w10iq")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 975.0
+offset_top = 593.0
+offset_right = 1149.0
+offset_bottom = 647.0
+theme_override_fonts/font = ExtResource("3_d8udd")
+theme_override_font_sizes/font_size = 30
+text = "Rest in peace."
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 65.0
+offset_top = 547.0
+offset_right = 1121.0
+offset_bottom = 618.0
+theme_override_fonts/font = ExtResource("3_d8udd")
+theme_override_font_sizes/font_size = 30
+text = "Score: 12334343"
+horizontal_alignment = 2
+
+[connection signal="gui_input" from="TextureRect" to="." method="_on_texture_rect_gui_input"]

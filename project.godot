@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="santa claus"
-run/main_scene="uid://dck6i7106325u"
+run/main_scene="uid://dwrhtilp2b37p"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Globals="*res://ui/menu/globals.gd"
 
 [display]
 

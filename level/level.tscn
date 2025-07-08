@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dck6i7106325u"]
+[gd_scene load_steps=9 format=3 uid="uid://dck6i7106325u"]
 
 [ext_resource type="PackedScene" uid="uid://ctktq0kdmj57" path="res://parallax/background_parallax.tscn" id="1_7lnir"]
 [ext_resource type="Script" uid="uid://bblliqk176m6y" path="res://level/level.gd" id="1_qohg2"]
 [ext_resource type="PackedScene" uid="uid://dmmylxhcg2pbi" path="res://characters/santa.tscn" id="2_5gx2l"]
+[ext_resource type="FontFile" uid="uid://bnnnb2i2x0h7f" path="res://ui/menu/Jersey10-Regular.ttf" id="4_vkbyq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qohg2"]
 size = Vector2(42, 698)
@@ -64,6 +65,15 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
 position = Vector2(603.5, 654)
 shape = SubResource("RectangleShape2D_44x8d")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 137.0
+offset_top = 27.0
+offset_right = 1131.0
+offset_bottom = 61.0
+theme_override_fonts/font = ExtResource("4_vkbyq")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 2
 
 [connection signal="timeout" from="MissileTimer" to="." method="_on_missile_timer_timeout"]
 [connection signal="timeout" from="BalloonTimer" to="." method="_on_balloon_timer_timeout"]
