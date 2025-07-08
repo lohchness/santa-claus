@@ -1,8 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://dck6i7106325u"]
+[gd_scene load_steps=8 format=3 uid="uid://dck6i7106325u"]
 
 [ext_resource type="PackedScene" uid="uid://ctktq0kdmj57" path="res://parallax/background_parallax.tscn" id="1_7lnir"]
 [ext_resource type="Script" uid="uid://bblliqk176m6y" path="res://level/level.gd" id="1_qohg2"]
 [ext_resource type="PackedScene" uid="uid://dmmylxhcg2pbi" path="res://characters/santa.tscn" id="2_5gx2l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qohg2"]
+size = Vector2(42, 698)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vkbyq"]
+size = Vector2(1172, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ktfr2"]
+size = Vector2(71.5, 699)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_44x8d"]
+size = Vector2(1211, 50)
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_qohg2")
@@ -24,6 +36,34 @@ autostart = true
 
 [node name="JetTimer" type="Timer" parent="."]
 autostart = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(11, 339)
+shape = SubResource("RectangleShape2D_qohg2")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(576, 10.5)
+shape = SubResource("RectangleShape2D_vkbyq")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(1153.25, 335.5)
+shape = SubResource("RectangleShape2D_ktfr2")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(603.5, 654)
+shape = SubResource("RectangleShape2D_44x8d")
 
 [connection signal="timeout" from="MissileTimer" to="." method="_on_missile_timer_timeout"]
 [connection signal="timeout" from="BalloonTimer" to="." method="_on_balloon_timer_timeout"]
