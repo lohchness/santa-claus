@@ -7,22 +7,22 @@
 [ext_resource type="Texture2D" uid="uid://c0b3xrwi6fgkd" path="res://characters/fighterjet/present/IMG_0582.PNG" id="5_qrxig"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n7fjr"]
-size = Vector2(22, 11)
+size = Vector2(19, 9)
 
 [node name="Present" type="CharacterBody2D"]
 script = ExtResource("1_vqkfe")
 gifts = Array[Texture2D]([ExtResource("2_ghx4h"), ExtResource("3_so0ah"), ExtResource("4_2f16b"), ExtResource("5_qrxig")])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_ghx4h")
 
 [node name="Present" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Present"]
-position = Vector2(0, 2.5)
+position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_n7fjr")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("2_ghx4h")
 
 [connection signal="body_entered" from="Present" to="." method="_on_present_body_entered"]

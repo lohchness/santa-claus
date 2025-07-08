@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dnlnnqwdfvyhg" path="res://characters/reindeer/reindeerspritesheet.png" id="2_4kmdv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4pfxu"]
-size = Vector2(100, 50)
+size = Vector2(80, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4kmdv"]
 atlas = ExtResource("2_4kmdv")
@@ -103,7 +103,7 @@ shape = SubResource("RectangleShape2D_4pfxu")
 script = ExtResource("1_rjcl0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -10)
+position = Vector2(0, -6)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_hunpn")
 autoplay = "default"
