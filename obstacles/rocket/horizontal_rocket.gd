@@ -9,8 +9,8 @@ func _ready() -> void:
 	velocity.y = jump_velocity
 
 func _physics_process(delta: float) -> void:
-	velocity.x = speed
-	velocity += Vector2(0, 700) * delta
+	velocity.x = speed * Globals.speedmult
+	velocity += Vector2(0, 700) * delta * Globals.speedmult
 	move_and_slide()
 
 

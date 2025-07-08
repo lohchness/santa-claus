@@ -5,7 +5,7 @@ var speed = 0
 var present = preload("res://characters/fighterjet/present/present.tscn")
 
 func _ready() -> void:
-	speed = randi_range(300, 500)
+	speed = randi_range(300, 500) * Globals.speedmult * 1.1
 	
 	var time = 1150 / speed
 	$PresentTimer.wait_time = randf_range(0.5, time - 0.5)

@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctktq0kdmj57"]
+[gd_scene load_steps=4 format=3 uid="uid://ctktq0kdmj57"]
 
 [ext_resource type="Texture2D" uid="uid://n5muleytl07e" path="res://parallax/moon_sky_2.png" id="1_7qhgf"]
+[ext_resource type="Script" uid="uid://nglgk7twh1ke" path="res://parallax/background_parallax.gd" id="1_36om2"]
 [ext_resource type="Texture2D" uid="uid://dcnqmwjms4khu" path="res://parallax/forest_long.png" id="1_m1spk"]
 
 [node name="BackgroundParallax" type="Node2D"]
+script = ExtResource("1_36om2")
 
 [node name="NightBackground" type="ColorRect" parent="."]
 offset_left = -15.0

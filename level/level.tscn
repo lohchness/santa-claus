@@ -27,6 +27,8 @@ metadata/_edit_horizontal_guides_ = [646.0]
 [node name="Santa" parent="." instance=ExtResource("2_5gx2l")]
 position = Vector2(149, 341)
 scale = Vector2(0.5, 0.5)
+collision_layer = 0
+collision_mask = 0
 
 [node name="StartGracePeriod" type="Timer" parent="."]
 wait_time = 2.0
@@ -49,6 +51,11 @@ autostart = true
 
 [node name="BalloonTimer" type="Timer" parent="."]
 wait_time = 3.0
+
+[node name="SpeedGracePeriod" type="Timer" parent="."]
+wait_time = 40.0
+one_shot = true
+autostart = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_mask = 0
@@ -94,3 +101,4 @@ horizontal_alignment = 2
 [connection signal="timeout" from="JetTimer" to="." method="_on_jet_timer_timeout"]
 [connection signal="timeout" from="BalloonGracePeriod" to="." method="_on_balloon_grace_period_timeout"]
 [connection signal="timeout" from="BalloonTimer" to="." method="_on_balloon_timer_timeout"]
+[connection signal="timeout" from="SpeedGracePeriod" to="." method="_on_speed_grace_period_timeout"]

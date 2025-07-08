@@ -18,6 +18,10 @@ func _physics_process(delta: float) -> void:
 	score = int(t * 10)
 	
 	label.text = str(score)
+	
+	if Globals.speedup:
+		Globals.speedmult = lerp(Globals.speedmult, Globals.maxspeedmult, .2 * delta)
+		print(Globals.speedmult)
 
 
 func end_game():
@@ -29,7 +33,7 @@ func _on_missile_timer_timeout() -> void:
 	add_child(m)
 	m.global_position = Vector2(1300, randi_range(50, 600))
 	
-	$MissileTimer.wait_time = randf_range(0.6, 1.6)
+	$MissileTimer.wait_time = randf_range(0.6, 1.6) / Globals.speedmult
 
 
 func _on_balloon_timer_timeout() -> void:
@@ -61,3 +65,6 @@ func _on_jet_grace_period_timeout() -> void:
 
 func _on_balloon_grace_period_timeout() -> void:
 	$BalloonTimer.start()
+
+func _on_speed_grace_period_timeout() -> void:
+	Globals.speedup = true
