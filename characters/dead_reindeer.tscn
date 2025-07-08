@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://da63lb7xb6fvx"]
+[gd_scene load_steps=17 format=3 uid="uid://da63lb7xb6fvx"]
 
 [ext_resource type="Script" uid="uid://6rdn8vf454cl" path="res://characters/dead_reindeer.gd" id="1_p56iu"]
 [ext_resource type="Texture2D" uid="uid://dnlnnqwdfvyhg" path="res://characters/reindeer/reindeerspritesheet.png" id="2_wiqqu"]
+[ext_resource type="AudioStream" uid="uid://b8lkd7ue4xicb" path="res://sound/8-bit-explosion-3-340456.mp3" id="3_rnts3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rnts3"]
 atlas = ExtResource("2_wiqqu")
@@ -109,5 +110,9 @@ autostart = true
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_3fkwu")
 autoplay = "default"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_rnts3")
+autoplay = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

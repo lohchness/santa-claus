@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dck6i7106325u"]
+[gd_scene load_steps=11 format=3 uid="uid://dck6i7106325u"]
 
 [ext_resource type="PackedScene" uid="uid://ctktq0kdmj57" path="res://parallax/background_parallax.tscn" id="1_7lnir"]
 [ext_resource type="Script" uid="uid://bblliqk176m6y" path="res://level/level.gd" id="1_qohg2"]
 [ext_resource type="PackedScene" uid="uid://dmmylxhcg2pbi" path="res://characters/santa.tscn" id="2_5gx2l"]
 [ext_resource type="FontFile" uid="uid://bnnnb2i2x0h7f" path="res://ui/menu/Jersey10-Regular.ttf" id="4_vkbyq"]
+[ext_resource type="AudioStream" uid="uid://bqr16hw8lrdjp" path="res://sound/santa-claus-merry-christmas.mp3" id="5_ktfr2"]
+[ext_resource type="AudioStream" uid="uid://ckixwyia4oo2h" path="res://sound/the-bells-of-war-christmas-holiday-electronic-conflict-hope-victory-171659.mp3" id="6_44x8d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qohg2"]
 size = Vector2(42, 698)
@@ -27,8 +29,6 @@ metadata/_edit_horizontal_guides_ = [646.0]
 [node name="Santa" parent="." instance=ExtResource("2_5gx2l")]
 position = Vector2(149, 341)
 scale = Vector2(0.5, 0.5)
-collision_layer = 0
-collision_mask = 0
 
 [node name="StartGracePeriod" type="Timer" parent="."]
 wait_time = 2.0
@@ -94,6 +94,15 @@ offset_bottom = 61.0
 theme_override_fonts/font = ExtResource("4_vkbyq")
 theme_override_font_sizes/font_size = 30
 horizontal_alignment = 2
+
+[node name="hohoho" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_ktfr2")
+autoplay = true
+
+[node name="music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_44x8d")
+volume_db = -5.0
+autoplay = true
 
 [connection signal="timeout" from="StartGracePeriod" to="." method="_on_start_grace_period_timeout"]
 [connection signal="timeout" from="MissileTimer" to="." method="_on_missile_timer_timeout"]

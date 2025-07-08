@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtypwedy52r48"]
+[gd_scene load_steps=5 format=3 uid="uid://dtypwedy52r48"]
 
 [ext_resource type="Script" uid="uid://bqu4vxe2rxjoa" path="res://ui/menu/end.gd" id="1_hbo8f"]
 [ext_resource type="Texture2D" uid="uid://d0aotv8ddfokw" path="res://ui/menu/end.png" id="1_w10iq"]
 [ext_resource type="FontFile" uid="uid://bnnnb2i2x0h7f" path="res://ui/menu/Jersey10-Regular.ttf" id="3_d8udd"]
+[ext_resource type="AudioStream" uid="uid://dt4u4t6tmgqfo" path="res://sound/8-bit-video-game-lose-sound-version-1-145828.mp3" id="4_d8udd"]
 
 [node name="End" type="Control"]
 layout_mode = 3
@@ -38,5 +39,10 @@ theme_override_fonts/font = ExtResource("3_d8udd")
 theme_override_font_sizes/font_size = 30
 text = "Score: 12334343"
 horizontal_alignment = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_d8udd")
+volume_db = -5.0
+autoplay = true
 
 [connection signal="gui_input" from="TextureRect" to="." method="_on_texture_rect_gui_input"]
